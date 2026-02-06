@@ -17,8 +17,10 @@ Play-by-play data from [nflverse](https://github.com/nflverse/nflverse-data) via
 ## Status
 
 **Phase 1: Data Acquisition** - Complete  
-**Phase 2: SQL Modeling** - Complete
-**Phase 3: Analysis** - Up Next
+**Phase 2: SQL Modeling** - Complete  
+**Phase 3: Analysis** - Complete  
+**Phase 4: Visualization** - Up Next
+
 
 ## Phases
 

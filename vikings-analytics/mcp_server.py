@@ -35,7 +35,7 @@ async def handle_list_tools() -> list[types.Tool]:
     return [
         types.Tool(
             name="query_vikings_data",
-            description="Execute SQL queries against the Vikings play-by-play database. Returns results from the plays table and views (fourth_down_plays, red_zone_plays, vikings_offense).",
+            description="Execute SQL queries against the Vikings database. Available tables: 'plays' (play-by-play 1999-2025), 'moss_1998_games' (Randy Moss's 1998 rookie season game stats), and views (fourth_down_plays, red_zone_plays, vikings_offense).",
             inputSchema={
                 "type": "object",
                 "properties": {

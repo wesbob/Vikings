@@ -56,12 +56,14 @@ Same deal - each phase is a commit. Small bites.
 
 **Vikings Analytics (Complete + MCP Server):**
 - Database: `vikings_analytics` (PostgreSQL, local)
-- Table: `plays` - 3 seasons of Vikings play-by-play data (2023-2025)
+- Tables: `plays` (38,869 play-by-play 1999-2025), `moss_1998_games` (Moss rookie season)
 - Views: `fourth_down_plays`, `red_zone_plays`, `vikings_offense`
+- Data sources: nflreadpy (play-by-play), Pro Football Reference (1998 supplemental)
+- Seasons: Moss era (1999-2004, 2010) + Jefferson era (2020-2025) = 13 seasons
 - Analysis: 4th down decision-making - found Vikings are conservative in red zone, kicking FGs 2.5x more than going for it on 4th-and-short
 - Visualizations: Charts showing 4th down aggression by field position and red zone decisions
-- MCP Server: Built conversational query interface for local database access through Claude Desktop
-- Scripts: `pull_data.py`, `load_to_db.py`, `create_views.sql`, `analyze_fourth_down.py`, `visualize_fourth_down.py`, `mcp_server.py`
+- MCP Server: Conversational query interface with access to both play-by-play and game stats
+- Scripts: `pull_data.py`, `load_to_db.py`, `load_1998_stats.py`, `create_views.sql`, `analyze_fourth_down.py`, `visualize_fourth_down.py`, `mcp_server.py`
 
 **Nicotine in Foods (Not started):**
 - Phase 1 is research and data collection

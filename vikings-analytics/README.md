@@ -6,7 +6,7 @@ Analyzing Minnesota Vikings play-by-play data to answer real football questions 
 
 **Are the Vikings too conservative on 4th down, especially in scoring situations?**
 
-Using play-by-play data from the Randy Moss era (1999-2004, 2010) and recent seasons (2023-2025), I analyzed Vikings 4th down decisions, receiver performance, and offensive patterns across different eras.
+Using play-by-play data spanning the Randy Moss era (1999-2004, 2010) and Justin Jefferson era (2020-2025), I analyzed Vikings 4th down decisions, receiver performance, and offensive patterns across multiple eras. Dataset includes Moss's 1998 rookie season stats for historical comparison.
 
 ## Findings
 
@@ -40,22 +40,26 @@ The Vikings are leaving points on the table by prioritizing guaranteed field goa
 
 ---
 
-## Data Source
+## Data Sources
 
-Play-by-play data from [nflverse](https://github.com/nflverse/nflverse-data) via the `nfl_data_py` Python package.
+**Play-by-play data:** [nflverse](https://github.com/nflverse/nflverse-data) via the `nflreadpy` Python package
 
 **Seasons included:**
 - Randy Moss era: 1999-2004 (first stint), 2010 (return)
-- Recent seasons: 2023-2025
-- **Total: 29,620 Vikings plays across 10 seasons**
+- Justin Jefferson era: 2020-2025
+- **Total: 38,869 Vikings plays across 13 seasons**
+
+**Supplemental data:** Randy Moss's 1998 rookie season game-by-game stats manually collected from [Pro Football Reference](https://www.pro-football-reference.com) (16 games, 69 receptions, 1,313 yards, 17 TDs)
 
 ## Tech Stack
 
 - **Python 3.12** - Data acquisition, analysis, visualization
-- **PostgreSQL 18** - Data storage and SQL analysis
+- **PostgreSQL 18** - Data storage and SQL analysis (2 tables: play-by-play + 1998 game stats)
+- **nflreadpy** - NFL data access via nflverse
 - **pandas** - Data manipulation
-- **matplotlib** - Charts
+- **matplotlib** - Visualization
 - **SQLAlchemy** - Database connectivity
+- **MCP (Model Context Protocol)** - Conversational database queries
 
 ## Project Structure
 
@@ -109,7 +113,11 @@ Static analysis answers specific questions, but I wanted to make the Vikings dat
 3. Executes against PostgreSQL database
 4. Returns results in natural language
 
-This runs locally and integrates with Claude Desktop, turning three seasons of play-by-play data into an interactive knowledge base.
+This runs locally and integrates with Claude Desktop, turning 13 seasons of play-by-play data plus Moss's 1998 rookie stats into an interactive knowledge base.
+
+**Available data:**
+- `plays` table: 38,869 play-by-play records (1999-2025)
+- `moss_1998_games` table: Randy Moss's rookie season game stats
 
 **Setup:**
 - `mcp_server.py` - MCP server connecting to vikings_analytics database

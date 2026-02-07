@@ -2,17 +2,11 @@
 
 Analyzing Minnesota Vikings play-by-play data to answer real football questions with data.
 
-## The Questions
+## The Question
 
-*To be refined as I explore the data, but starting points:*
+**Are the Vikings too conservative on 4th down, especially in scoring situations?**
 
-- How aggressive are the Vikings on 4th down compared to what the math says they should do?
-- Where does the offense break down in the red zone?
-- How do key receivers perform in different game situations (ahead, behind, close games)?
-
-## Data Source
-
-Play-by-play data from [nflverse](https://github.com/nflverse/nflverse-data) via the `nfl_data_py` Python package. Every play from every NFL game, ~400 columns of detail.
+Using three seasons of play-by-play data (2023-2025), I analyzed every 4th down decision to see how field position and game situation affect their go-for-it vs punt/kick choices.
 
 ## Findings
 
@@ -59,6 +53,8 @@ Play-by-play data from [nflverse](https://github.com/nflverse/nflverse-data) via
 - **SQLAlchemy** - Database connectivity
 
 ## Project Structure
+
+```
 vikings-analytics/
 ├── pull_data.py              # Download play-by-play data from nflverse
 ├── load_to_db.py             # Load data into PostgreSQL
@@ -67,16 +63,32 @@ vikings-analytics/
 ├── visualize_fourth_down.py  # Generate charts
 ├── fourth_down_aggression.png
 └── red_zone_fourth_down.png
-
+```
 
 ## How to Run
 
 1. **Pull data:**
    ```bash
    python pull_data.py
+   ```
 
-POSTGRES_PASSWORD=yourpassword python load_to_db.py
-psql -U postgres -d vikings_analytics -f create_views.sql
-POSTGRES_PASSWORD=yourpassword python analyze_fourth_down.py
-POSTGRES_PASSWORD=yourpassword python visualize_fourth_down.py
+2. **Load into PostgreSQL:**
+   ```bash
+   POSTGRES_PASSWORD=yourpassword python load_to_db.py
+   ```
+
+3. **Create views:**
+   ```bash
+   psql -U postgres -d vikings_analytics -f create_views.sql
+   ```
+
+4. **Run analysis:**
+   ```bash
+   POSTGRES_PASSWORD=yourpassword python analyze_fourth_down.py
+   ```
+
+5. **Generate charts:**
+   ```bash
+   POSTGRES_PASSWORD=yourpassword python visualize_fourth_down.py
+   ```
 

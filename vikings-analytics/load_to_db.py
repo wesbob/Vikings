@@ -2,7 +2,7 @@ import os
 import pandas as pd
 from sqlalchemy import create_engine
 
-csv_file_path = 'vikings_pbp_2023_2025.csv'
+csv_file_path = 'vikings_pbp_full.csv'
 password = os.environ.get('POSTGRES_PASSWORD')
 database_connection = f'postgresql://postgres:{password}@localhost:5432/vikings_analytics'
 

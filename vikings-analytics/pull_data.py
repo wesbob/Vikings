@@ -1,10 +1,12 @@
 import nfl_data_py as nfl
 import pandas as pd
 
-# Pull play-by-play data for recent seasons
+# Pull play-by-play data for Randy Moss era (1999-2004, 2010) and recent seasons (2023-2025)
 # This takes a minute - it's downloading a lot of data
-print("Pulling play-by-play data for 2023-2025...")
-pbp = nfl.import_pbp_data([2023, 2024, 2025])
+# Note: NFLverse data starts from 1999, so Moss's 1998 rookie season isn't available
+seasons = [1999, 2000, 2001, 2002, 2003, 2004, 2010, 2023, 2024, 2025]
+print(f"Pulling play-by-play data for {len(seasons)} seasons: {seasons}...")
+pbp = nfl.import_pbp_data(seasons)
 
 print(f"Total plays: {len(pbp):,}")
 print(f"Columns: {len(pbp.columns)}")
@@ -26,5 +28,6 @@ print("\n--- Sample row ---")
 print(fourthDowns[keyColumns].head(1).to_string())
 
 # Save to csv
-output_path = 'vikings_pbp_2023_2025.csv'
+output_path = 'vikings_pbp_full.csv'
 vikings.to_csv(output_path, index=False)
+print(f"\nSaved to {output_path}")

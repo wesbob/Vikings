@@ -6,7 +6,7 @@ Analyzing Minnesota Vikings play-by-play data to answer real football questions 
 
 **Are the Vikings too conservative on 4th down, especially in scoring situations?**
 
-Using three seasons of play-by-play data (2023-2025), I analyzed every 4th down decision to see how field position and game situation affect their go-for-it vs punt/kick choices.
+Using play-by-play data from the Randy Moss era (1999-2004, 2010) and recent seasons (2023-2025), I analyzed Vikings 4th down decisions, receiver performance, and offensive patterns across different eras.
 
 ## Findings
 
@@ -43,6 +43,11 @@ The Vikings are leaving points on the table by prioritizing guaranteed field goa
 ## Data Source
 
 Play-by-play data from [nflverse](https://github.com/nflverse/nflverse-data) via the `nfl_data_py` Python package.
+
+**Seasons included:**
+- Randy Moss era: 1999-2004 (first stint), 2010 (return)
+- Recent seasons: 2023-2025
+- **Total: 29,620 Vikings plays across 10 seasons**
 
 ## Tech Stack
 

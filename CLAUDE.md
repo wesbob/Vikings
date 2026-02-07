@@ -54,12 +54,13 @@ Same deal - each phase is a commit. Small bites.
 
 ## Current State
 
-**Vikings Analytics (Phase 2 complete):**
+**Vikings Analytics (Phase 3 complete):**
 - Database: `vikings_analytics` (PostgreSQL, local)
 - Table: `plays` - 3 seasons of Vikings play-by-play data (2023-2025)
 - Views: `fourth_down_plays`, `red_zone_plays`, `vikings_offense`
-- Next: Phase 3 (Analysis) - dig into 4th down decisions, red zone efficiency, or receiver performance
-- Scripts: `pull_data.py` (fetches from nflverse), `load_to_db.py` (loads to PostgreSQL), `create_views.sql`
+- Analysis: 4th down decision-making - found Vikings are conservative in red zone, kicking FGs 2.5x more than going for it on 4th-and-short
+- Next: Phase 4 (Visualization) - create charts showing 4th down patterns
+- Scripts: `pull_data.py`, `load_to_db.py`, `create_views.sql`, `analyze_fourth_down.py`
 
 **Nicotine in Foods (Not started):**
 - Phase 1 is research and data collection

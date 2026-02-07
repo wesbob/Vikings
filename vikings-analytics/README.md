@@ -92,3 +92,20 @@ vikings-analytics/
    POSTGRES_PASSWORD=yourpassword python visualize_fourth_down.py
    ```
 
+## Interactive Querying (MCP Server)
+
+**Why build this?**
+
+Static analysis answers specific questions, but I wanted to make the Vikings database *conversational*. Instead of writing SQL every time I have a question, I built an MCP (Model Context Protocol) server that lets me ask questions in plain English.
+
+**How it works:**
+1. Ask: "How often do the Vikings convert 4th-and-1 in the red zone?"
+2. MCP server converts question → SQL query
+3. Executes against PostgreSQL database
+4. Returns results in natural language
+
+This runs locally and integrates with Claude Desktop, turning three seasons of play-by-play data into an interactive knowledge base.
+
+**Setup:**
+- `mcp_server.py` - MCP server connecting to vikings_analytics database
+- Configured in Claude Desktop settings for local use

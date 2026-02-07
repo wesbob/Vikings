@@ -54,13 +54,14 @@ Same deal - each phase is a commit. Small bites.
 
 ## Current State
 
-**Vikings Analytics (Phase 3 complete):**
+**Vikings Analytics (Complete + MCP Server):**
 - Database: `vikings_analytics` (PostgreSQL, local)
 - Table: `plays` - 3 seasons of Vikings play-by-play data (2023-2025)
 - Views: `fourth_down_plays`, `red_zone_plays`, `vikings_offense`
 - Analysis: 4th down decision-making - found Vikings are conservative in red zone, kicking FGs 2.5x more than going for it on 4th-and-short
-- Next: Phase 4 (Visualization) - create charts showing 4th down patterns
-- Scripts: `pull_data.py`, `load_to_db.py`, `create_views.sql`, `analyze_fourth_down.py`
+- Visualizations: Charts showing 4th down aggression by field position and red zone decisions
+- MCP Server: Built conversational query interface for local database access through Claude Desktop
+- Scripts: `pull_data.py`, `load_to_db.py`, `create_views.sql`, `analyze_fourth_down.py`, `visualize_fourth_down.py`, `mcp_server.py`
 
 **Nicotine in Foods (Not started):**
 - Phase 1 is research and data collection
